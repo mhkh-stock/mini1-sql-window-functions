@@ -1,0 +1,12 @@
+customer      city        orders  total_spend  spend_rank
+------------  ----------  ------  -----------  ----------
+Ayesha Khan   Lahore      4       56700        1         
+Bilal Ahmed   Karachi     4       46600        2         
+Fatima Noor   Islamabad   4       44100        3         
+Maryam Iqbal  Islamabad   3       37400        4         
+Usman Tariq   Lahore      3       34800        5         
+Omar Sheikh   Lahore      3       34100        6         
+Hassan Raza   Faisalabad  3       26000        7         
+Zainab Ali    Karachi     3       25400        8         
+Sana Malik    Karachi     3       23600        9         
+Ali Nawaz     Multan      2       18100        10        

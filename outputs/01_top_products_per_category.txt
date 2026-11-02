@@ -1,0 +1,10 @@
+category     product              revenue  rank_no  dense_rank_no
+-----------  -------------------  -------  -------  -------------
+Electronics  Mechanical Keyboard  51000    1        1            
+Electronics  Wireless Mouse       35000    2        2            
+Electronics  Laptop Stand         18000    3        3            
+Furniture    Office Chair         72000    1        1            
+Furniture    Desk Lamp            33600    2        2            
+Kitchen      Dinner Set 24pc      58000    1        1            
+Kitchen      Ceramic Mug Set      48000    2        2            
+Stationery   Notebook Set         31200    1        1            

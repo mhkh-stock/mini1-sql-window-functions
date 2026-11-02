@@ -1,0 +1,12 @@
+customer      total_spend  spend_quartile
+------------  -----------  --------------
+Ayesha Khan   56700        1             
+Bilal Ahmed   46600        1             
+Fatima Noor   44100        1             
+Maryam Iqbal  37400        2             
+Usman Tariq   34800        2             
+Omar Sheikh   34100        2             
+Hassan Raza   26000        3             
+Zainab Ali    25400        3             
+Sana Malik    23600        4             
+Ali Nawaz     18100        4             

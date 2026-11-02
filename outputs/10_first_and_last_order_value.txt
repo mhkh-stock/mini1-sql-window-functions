@@ -1,0 +1,12 @@
+customer      first_order_value  last_order_value
+------------  -----------------  ----------------
+Ali Nawaz     6400               11700           
+Ayesha Khan   11800              12000           
+Bilal Ahmed   7000               5000            
+Fatima Noor   6000               19000           
+Hassan Raza   4800               14500           
+Maryam Iqbal  4500               18000           
+Omar Sheikh   7500               19200           
+Sana Malik    2500               18700           
+Usman Tariq   7400               7000            
+Zainab Ali    4800               11000           

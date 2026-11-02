@@ -1,0 +1,12 @@
+customer      order_id  order_date  order_total
+------------  --------  ----------  -----------
+Maryam Iqbal  29        2026-06-28  18000      
+Bilal Ahmed   26        2026-06-25  5000       
+Sana Malik    22        2026-06-20  18700      
+Ayesha Khan   25        2026-06-18  12000      
+Hassan Raza   16        2026-06-12  14500      
+Fatima Noor   9         2026-06-05  19000      
+Usman Tariq   27        2026-06-02  7000       
+Ali Nawaz     24        2026-05-30  11700      
+Zainab Ali    13        2026-05-25  11000      
+Omar Sheikh   20        2026-05-08  19200      

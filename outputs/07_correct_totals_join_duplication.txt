@@ -1,0 +1,12 @@
+customer      orders  total_spend
+------------  ------  -----------
+Ayesha Khan   4       56700      
+Bilal Ahmed   4       46600      
+Fatima Noor   4       44100      
+Maryam Iqbal  3       37400      
+Usman Tariq   3       34800      
+Omar Sheikh   3       34100      
+Hassan Raza   3       26000      
+Zainab Ali    3       25400      
+Sana Malik    3       23600      
+Ali Nawaz     2       18100      

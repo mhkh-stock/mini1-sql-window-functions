@@ -9,4 +9,4 @@ Fictional shop, fictional people, fictional orders, Jan–Jun 2026.
 | orders | order_id / customer_id / order_date | One row per order |
 | order_items | order_item_id / order_id / product_id / quantity / unit_price_at_sale | One row per product line in an order; order total = SUM(quantity × unit_price_at_sale) |
 
-Run: `sqlite3 demo.db < data/schema.sql` then `sqlite3 demo.db < data/seed.sql`, then any file in `sql/`.
+Run (from the project root): `sqlite3 data/demo.db < data/schema.sql` then `sqlite3 data/demo.db < data/seed.sql`, then any file in `sql/`. Or verify everything in one command: `python3 run_queries.py`.

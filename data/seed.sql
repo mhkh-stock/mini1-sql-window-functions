@@ -1,8 +1,10 @@
 -- Mini #1 seed data — SAMPLE / DEMO only. Fictional customers, products, orders.
 -- 10 customers, 8 products, 32 orders, 52 order lines, Jan–Jun 2026.
--- Deliberately includes: repeat buyers (for LAG), revenue ties inside a
--- category (for RANK vs DENSE_RANK), and multi-line orders (for the
--- join-duplication trap in sql/07).
+-- Deliberately includes: repeat buyers (for LAG) and multi-line orders
+-- (for the join-duplication trap in sql/07). Note: no two products tie
+-- on revenue inside a category in this data, so RANK and DENSE_RANK
+-- agree on every row of query 01 — the difference between them only
+-- shows when a tie occurs (see the header comment in sql/01).
 
 INSERT INTO customers VALUES
 (1,'Ayesha Khan','Lahore','2025-11-02'),

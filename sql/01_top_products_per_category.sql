@@ -3,6 +3,10 @@
 -- Teaches: RANK() vs DENSE_RANK(), PARTITION BY, CTEs.
 -- Why RANK matters: two products tied on revenue share a rank, and the
 -- next rank is skipped (1, 2, 2, 4). DENSE_RANK does not skip (1, 2, 2, 3).
+-- Honest note: this demo data has NO revenue tie inside any category, so
+-- rank_no and dense_rank_no agree on every row below — the columns show
+-- the two functions side by side, but the difference only appears when
+-- a tie exists. Do not claim a tie was demonstrated.
 -- Run: sqlite3 data/demo.db < sql/01_top_products_per_category.sql
 
 WITH product_revenue AS (

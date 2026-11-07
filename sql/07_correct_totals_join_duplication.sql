@@ -28,5 +28,5 @@ SELECT
 FROM orders o
 JOIN order_totals ot ON ot.order_id = o.order_id
 JOIN customers c ON c.customer_id = o.customer_id
-GROUP BY c.name
+GROUP BY c.customer_id, c.name
 ORDER BY total_spend DESC;

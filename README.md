@@ -20,13 +20,17 @@ Built database: `data/demo.db` (rebuild it any time from schema + seed).
 3. `sqlite3 data/demo.db < data/seed.sql`
 4. Run any query, e.g. `sqlite3 -header -column data/demo.db < sql/01_top_products_per_category.sql`
 
+Or verify everything in one command: `python3 run_queries.py` — rebuilds
+`data/demo.db`, runs all 10 queries, and asserts every number in the
+table below (stdlib only, no dependencies).
+
 Requires SQLite 3.25+ (window functions). Verified on SQLite 3.45.1.
 
 ## Queries
 
 | File | Business question | Teaches | Verified output |
 |---|---|---|---|
-| `sql/01_top_products_per_category.sql` | Which 3 products earn most in each category? | `RANK` vs `DENSE_RANK`, `PARTITION BY` | 8 rows; top: Office Chair PKR 72,000 (Furniture), Dinner Set 24pc PKR 58,000 (Kitchen), Mechanical Keyboard PKR 51,000 (Electronics) |
+| `sql/01_top_products_per_category.sql` | Which 3 products earn most in each category? | `RANK` vs `DENSE_RANK`, `PARTITION BY` (both agree here — no revenue tie in the demo data) | 8 rows; top: Office Chair PKR 72,000 (Furniture), Dinner Set 24pc PKR 58,000 (Kitchen), Mechanical Keyboard PKR 51,000 (Electronics) |
 | `sql/02_latest_order_per_customer.sql` | What is each customer's most recent order? | `ROW_NUMBER`, pre-aggregation | 10 rows, one per customer |
 | `sql/03_running_total_monthly_revenue.sql` | How does revenue build up through the year? | Cumulative `SUM() OVER` | 6 months; Jan 37,100 → Jun running total 346,800 |
 | `sql/04_days_between_repeat_orders.sql` | How quickly do customers come back? | `LAG`, `julianday` gaps | 32 rows; first order per customer correctly has NULL gap |
@@ -39,19 +43,27 @@ Requires SQLite 3.25+ (window functions). Verified on SQLite 3.45.1.
 
 ## Verification (done before delivery)
 
+- `python3 run_queries.py` — 27 checks, all passing: base counts, total
+  revenue, monthly/customer reconciliation, every row count and headline
+  figure in the table above, Q06/Q07 agreement, per-category shares
+  summing to 100%, and quartile sizes/members.
 - All 10 files above execute against `data/demo.db` with no errors (one bug found
   and fixed during verification: ambiguous `customer_id` in query 10).
 - Reconciliation: total revenue 346,800 = monthly sum 346,800 = customer sum 346,800.
 - Query 06 and query 07 agree on every customer total and on the #1 customer.
 - Verified outputs are saved in `outputs/` (one `.txt` per query).
 
+## Limits
+
+- SAMPLE / DEMO data only — fictional shop, Jan–Jun 2026, SQLite only.
+- No two products tie on revenue inside a category in this data, so query 01
+  shows `RANK` and `DENSE_RANK` side by side but cannot demonstrate how they
+  differ on a tie; the difference is explained in the file's header comment.
+- Query 07's join-duplication trap is demonstrated in its comments only: this
+  dataset has no order-level amount column to inflate, so the "wrong" pattern
+  has nothing to over-count. The fix pattern (aggregate before joining) is
+  what the query teaches, and its totals are verified against query 06.
+
 ## Note for the publisher
 
-At delivery time this folder also contained 8 additional `sql/` files written
-concurrently by another worker (`01_customer_running_total.sql`,
-`02_rank_vs_dense_rank.sql`, `03_days_between_orders_lag.sql`,
-`04_monthly_running_total.sql`, `05_top3_per_category.sql`,
-`06_moving_average_3_orders.sql`, `07_join_duplication_trap.sql`,
-`08_share_of_category_total.sql`). They are NOT part of the verified 10-file set
-above — deduplicate before publishing so the mini ships as one clean set.
 No GitHub repo was created and nothing was pushed, per the task.

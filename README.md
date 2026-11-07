@@ -1,5 +1,7 @@
 # Mini #1 — SQL Window Functions Pack
 
+**Repo:** https://github.com/mhkh-stock/mini1-sql-window-functions
+
 **SAMPLE / DEMO data only.** Fictional shop, fictional people, fictional orders.
 Never claimed as real client or real business data.
 
@@ -64,6 +66,8 @@ Requires SQLite 3.25+ (window functions). Verified on SQLite 3.45.1.
   has nothing to over-count. The fix pattern (aggregate before joining) is
   what the query teaches, and its totals are verified against query 06.
 
-## Note for the publisher
+## Published
 
-No GitHub repo was created and nothing was pushed, per the task.
+Live on GitHub: https://github.com/mhkh-stock/mini1-sql-window-functions
+(published 2 Nov 2026). The built `data/demo.db` is intentionally not
+uploaded — rebuild it any time from `data/schema.sql` + `data/seed.sql`.
